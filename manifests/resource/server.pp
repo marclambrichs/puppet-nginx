@@ -89,6 +89,7 @@
 #   [*auth_basic_user_file*]       - This directive sets the htpasswd filename for the authentication realm.
 #   [*auth_request*]               - This allows you to specify a custom auth endpoint
 #   [*client_max_body_size*]       - This directive sets client_max_body_size.
+#   [*client_body_buffer_size*]    - Sets buffer size for reading client request body. Equal to two memory pages.
 #   [*client_body_timeout*]        - Sets how long the server will wait for a client body. Default is 60s
 #   [*client_header_timeout*]      - Sets how long the server will wait for a client header. Default is 60s
 #   [*raw_prepend*]                - A single string, or an array of strings to prepend to the server directive (after cfg prepend
@@ -230,6 +231,7 @@ define nginx::resource::server (
   Optional[String] $auth_basic                                                   = undef,
   Optional[String] $auth_basic_user_file                                         = undef,
   Optional[String] $auth_request                                                 = undef,
+  Optional[String] $client_body_buffer_size                                      = undef,
   Optional[String] $client_body_timeout                                          = undef,
   Optional[String] $client_header_timeout                                        = undef,
   $client_max_body_size                                                          = undef,
